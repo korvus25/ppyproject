@@ -1,0 +1,36 @@
+2024-03-01 08:00:01 INFO  [startup] Application starting up version=2.4.1
+2024-03-01 08:00:02 DEBUG [startup] Loading configuration from /etc/app/config.yaml
+2024-03-01 08:00:03 INFO  [database] Connecting to PostgreSQL host=db.local port=5432
+2024-03-01 08:00:04 INFO  [database] Connection pool initialised size=10
+2024-03-01 08:00:05 INFO  [auth] Authentication service ready
+2024-03-01 08:01:12 INFO  [api] GET /health status=200 duration=3ms
+2024-03-01 08:01:45 WARNING [database] Slow query detected duration=1532ms query=SELECT
+2024-03-01 08:02:03 INFO  [api] POST /login user=alice status=200
+2024-03-01 08:02:11 ERROR [auth] Failed login attempt user=bob ip=192.168.1.45 attempts=3
+2024-03-01 08:02:30 INFO  [api] GET /dashboard user=alice status=200
+2024-03-01 08:03:00 DEBUG [cache] Cache miss key=user_session_alice
+2024-03-01 08:03:01 INFO  [cache] Cache populated key=user_session_alice ttl=3600
+2024-03-01 08:05:00 WARNING [database] Connection pool running low available=2 total=10
+2024-03-01 08:05:01 ERROR [database] Query timeout after=5000ms table=orders
+2024-03-01 08:05:02 CRITICAL [database] Lost connection to primary database host=db.local
+2024-03-01 08:05:03 ERROR [api] Service unavailable — database unreachable status=503
+2024-03-01 08:05:05 INFO  [database] Attempting reconnect attempt=1
+2024-03-01 08:05:07 INFO  [database] Attempting reconnect attempt=2
+2024-03-01 08:05:10 INFO  [database] Reconnected to replica host=db-replica.local
+2024-03-01 08:05:11 WARNING [api] Serving read-only mode — using replica
+2024-03-01 08:06:00 INFO  [api] GET /orders user=alice status=200
+2024-03-01 08:10:00 INFO  [scheduler] Running cleanup job
+2024-03-01 08:10:02 DEBUG [scheduler] Deleted 42 expired sessions
+2024-03-01 08:15:00 ERROR [auth] JWT token validation failed user=charlie reason=expired
+2024-03-01 08:15:01 INFO  [auth] Token refreshed user=charlie
+2024-03-01 08:20:00 WARNING [api] Rate limit approaching ip=10.0.0.5 requests=95 limit=100
+2024-03-01 08:20:30 ERROR [api] Rate limit exceeded ip=10.0.0.5 status=429
+2024-03-01 08:25:00 INFO  [api] POST /logout user=alice status=200
+2024-03-01 08:30:00 INFO  [scheduler] Scheduled backup starting
+2024-03-01 08:30:01 DEBUG [scheduler] Backup target=s3://my-bucket/backups
+2024-03-01 08:31:42 INFO  [scheduler] Backup completed size=142MB duration=101s
+2024-03-01 09:00:00 CRITICAL [auth] Possible brute-force detected ip=203.0.113.99 attempts=500
+2024-03-01 09:00:01 ERROR [auth] Blocking IP ip=203.0.113.99
+2024-03-01 09:00:02 INFO  [security] IP 203.0.113.99 added to blocklist ttl=3600
+ERROR: Unhandled exception in worker thread
+WARNING: Memory usage high percent=87
