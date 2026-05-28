@@ -18,7 +18,6 @@ class LogEntry:
     source: Optional[str] = None
     line_number: Optional[int] = None
 
-    # Extra key=value pairs captured from structured logs
     extra: dict = field(default_factory=dict)
 
     @property
