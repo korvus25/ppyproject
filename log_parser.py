@@ -9,10 +9,10 @@ from models import LogEntry
 
 
 _RE_STANDARD = re.compile(
-    r"^(?P<ts>\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2})"   # timestamp
-    r"\s+(?P<level>DEBUG|INFO|WARNING|ERROR|CRITICAL)"       # level
-    r"(?:\s+\[(?P<source>[^\]]+)\])?"                        # optional [source]
-    r"\s+(?P<message>.+)$",                                  # message
+    r"^(?P<ts>\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2})"  
+    r"\s+(?P<level>DEBUG|INFO|WARNING|ERROR|CRITICAL)"       
+    r"(?:\s+\[(?P<source>[^\]]+)\])?"                       
+    r"\s+(?P<message>.+)$",                                 
     re.IGNORECASE,
 )
 
