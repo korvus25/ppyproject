@@ -23,7 +23,7 @@ def _print_entries(entries, limit: int = 50) -> None:
         return
     for e in shown:
         print(f"  {e}")
-    if len(list(entries)) > limit:  # type: ignore[arg-type]
+    if len(list(entries)) > limit:  
         print(f"  … (showing first {limit} of {len(entries)} entries)")
 
 def action_load(parser_state: dict) -> None:
