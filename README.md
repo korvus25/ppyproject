@@ -245,7 +245,7 @@ python3 main.py --file app.log --level WARNING --keyword auth --json
 
 MIT License
 
-Copyright (c) 2026 Alex
+Copyright (c) 2026 Oleksandr Shtohrinets
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
