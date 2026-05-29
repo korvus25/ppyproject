@@ -187,30 +187,6 @@ reports/
 - `message`
 
 ---
-
-## Error Handling
-
-Custom exceptions:
-- `LogParserError` - base class
-- `InvalidLogFormatError` - bad line format
-- `LogFileNotFoundError` - missing input file
-- `ReportGenerationError` - write/export failure
-
-In menu mode, parser errors are shown and app continues working.  
-In CLI mode with `--file`, fatal parser errors return exit code `1`.
-
----
-
-## Developer Notes
-
-- Parsing pipeline is split into:
-  - `parse_line(...)` for per-line decoding
-  - `iter_entries(...)` for file iteration and strict/lenient behavior
-  - `LogParser` methods for loaded-data filtering and aggregation
-- `@timed` decorator prints runtime for selected operations (`load`, `save_json`, `save_csv`).
-
----
-
 ## Splunk Connector Note
 
 `splunkconnector.py` is not part of the main parser flow and appears to be a separate integration experiment.
